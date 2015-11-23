@@ -1,0 +1,2 @@
+module LocationmapHelper
+end

@@ -1,0 +1,28 @@
+<%= form_for(@addonmap,:html=>{:name=>"f",:onsubmit=>"getLocation(event);"})  do |f| %>
+  <% if @addonmap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@addonmap.errors.count, "error") %> prohibited this addonmap from being saved:</h2>
+
+      <ul>
+      <% @addonmap.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!-- get latitude and longitude -->
+  <%= f.hidden_field  :latitude %>
+   <%= f.hidden_field  :longitude %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+    <div>
+  Image upload: <%= f.file_field :avatar  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

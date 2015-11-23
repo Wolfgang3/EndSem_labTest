@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<div>
+<%= image_tag @addonmap.avatar.url(:thumb) %>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= @addonmap.name %>
+</p>
+
+<%= link_to 'Edit', edit_addonmap_path(@addonmap) %> |
+<%= link_to 'Back', addonmaps_path %>

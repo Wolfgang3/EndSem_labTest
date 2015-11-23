@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Addonmaps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>specie name</th>
+      <th>Image</th>
+  
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @addonmaps.each do |addonmap| %>
+      <tr>
+        <td><%= addonmap.name %></td>
+        <td><%= image_tag addonmap.avatar.url(:thumb) %>  <td> 
+        <td><%= link_to 'Show', addonmap %></td>
+        <td><%= link_to 'Edit', edit_addonmap_path(addonmap) %></td>
+        <td><%= link_to 'Destroy', addonmap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Addonmap', new_addonmap_path %>
+<br>
+<%= link_to "See all popular sightings", locationmap_show_path, class: "btn btn-link"  %>
