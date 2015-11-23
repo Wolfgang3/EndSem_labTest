@@ -41,25 +41,24 @@
 	    var infowindow = new google.maps.InfoWindow();
 		
 	    var marker, i;
-
-	 for (i = 0; i < report.length; i++) {  
-	      var image = 'cobra.jpg';
+	    //console.log( reports.length);
+	    for (i = 0; i < reports.length; i++) {  
+	     
 		  marker = new google.maps.Marker({
-	        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+	        position: new google.maps.LatLng(reports[i]["lat"], reports[i]["lng"]),
 	        map: map,
-			icon:locations[i][3],
+			icon:reports[i]["image"],
 	            
 			
 	      });
 
 	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
 	        return function() {
-	          infowindow.setContent(locations[i][0]);
+	          infowindow.setContent(reports[i]["species"]);
 	          infowindow.open(map, marker);
 	        }
 	      })(marker, i));
 	    }
-	
 	  </script>
 
 

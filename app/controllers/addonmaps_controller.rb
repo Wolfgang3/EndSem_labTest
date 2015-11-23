@@ -69,7 +69,7 @@ class AddonmapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def addonmap_params
-      params.require(:addonmap).permit(:latitude, :longitude, :name,:avatar)
+      params.require(:addonmap).permit(:city_name,:latitude, :longitude, :name,:avatar)
   
     end
 end

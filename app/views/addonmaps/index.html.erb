@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>place</th>
       <th>specie name</th>
       <th>Image</th>
   
@@ -15,6 +16,7 @@
   <tbody>
     <% @addonmaps.each do |addonmap| %>
       <tr>
+        <td><%= addonmap.city_name %></td>
         <td><%= addonmap.name %></td>
         <td><%= image_tag addonmap.avatar.url(:thumb) %>  <td> 
         <td><%= link_to 'Show', addonmap %></td>
